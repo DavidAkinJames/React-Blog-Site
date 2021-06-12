@@ -3,7 +3,7 @@ import './navbar.css'
 
 
 export default function Navbar() {
-   const user = true;
+   const user = false;
 
 
   return (
@@ -39,27 +39,53 @@ export default function Navbar() {
 
        </div>
        <div className="topRight">
-         {
-           user ? (
-            <img className="topImg" src="/images/profile.jpg_medium" alt="profile-pic"/>
-           ) : (
-             <ul className="topList">
-               <li className="topListItem">
-               <Link className="link"   to="/login">Login</Link>
-               </li>
-               <li className="topListItem">
-               <Link className="link"   to="/register">Register</Link>
+        {user ? (
+
+          <Link className="link" to="/settings">
+             <img className="topImg" src="/images/profile.jpg_medium" alt="profile-pic"/>
+          </Link>
+        ) : (
+          <ul className="topList">
+            <li className="topListItem">
+              <Link className="link" to="/login">
+                Login
+              </Link>
+            </li>
+            <li className="topListItem">
+              <Link className="link" to="/register">
+                Register
+              </Link>
+            </li>
+          </ul>
+        )}
+        <i className="topSearchIcon fas fa-search"></i>
+      </div>
 
 
-               </li>
-           
-            </ul>
-           )
 
-         }
-     
-         <i className='topSearchIcon bx bx-search'></i>
-       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
     </div>
   )
 }
